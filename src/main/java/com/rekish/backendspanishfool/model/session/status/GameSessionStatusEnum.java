@@ -4,4 +4,5 @@ public enum GameSessionStatusEnum {
     OPEN,
     PLAYING,
     FINISHED,
+    CANCELLED,
 }

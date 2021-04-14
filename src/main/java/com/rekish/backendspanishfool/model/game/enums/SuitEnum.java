@@ -1,4 +1,4 @@
-package com.rekish.backendspanishfool.model.card;
+package com.rekish.backendspanishfool.model.game.enums;
 
 public enum SuitEnum {
     HEARTS,

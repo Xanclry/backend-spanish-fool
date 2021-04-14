@@ -1,17 +1,18 @@
-package com.rekish.backendspanishfool.model.game.state;
+package com.rekish.backendspanishfool.model.dto;
 
 import com.rekish.backendspanishfool.model.game.Card;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-import java.util.Set;
 
 @Data
 @AllArgsConstructor
-public class GameState {
-    private Set<PlayerState> playerStates;
+@NoArgsConstructor
+public class GameStateDto {
     private Integer discardedCardsAmount;
     private List<Card> cardStack;
-    private List<Card> deck;
+    private Integer deckSize;
+    private Integer moveCount;
 }

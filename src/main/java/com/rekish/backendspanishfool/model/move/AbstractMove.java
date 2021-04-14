@@ -1,6 +1,6 @@
 package com.rekish.backendspanishfool.model.move;
 
-import com.rekish.backendspanishfool.model.player.Player;
+import com.rekish.backendspanishfool.model.entity.player.Player;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

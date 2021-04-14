@@ -11,4 +11,5 @@ public interface GameSessionMapper {
     @Mapping(target = "id", ignore = true)
     GameSession gameSessionDtoToGameSession(GameSessionDto dto);
     GameSessionDto gameSessionToGameSessionDto(GameSession entity);
+
 }

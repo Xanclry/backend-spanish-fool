@@ -1,12 +1,10 @@
 package com.rekish.backendspanishfool.service.session;
 
 import com.rekish.backendspanishfool.model.entity.session.GameSession;
+import com.rekish.backendspanishfool.service.ReadWriteService;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface SessionService {
+public interface GameSessionService extends ReadWriteService<Long, GameSession> {
     List<GameSession> getOpenGameSessions();
-
-    Optional<GameSession> getPrivateGameSession(Integer sessionId);
 }

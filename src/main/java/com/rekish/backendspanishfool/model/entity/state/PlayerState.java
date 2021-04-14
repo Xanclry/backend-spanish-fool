@@ -2,8 +2,8 @@ package com.rekish.backendspanishfool.model.entity.state;
 
 import com.rekish.backendspanishfool.model.entity.player.Player;
 import com.rekish.backendspanishfool.model.entity.state.result.PlayerResult;
-import com.rekish.backendspanishfool.model.game.Card;
-import com.rekish.backendspanishfool.model.game.ChestItem;
+import com.rekish.backendspanishfool.model.entity.game.Card;
+import com.rekish.backendspanishfool.model.entity.game.ChestItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

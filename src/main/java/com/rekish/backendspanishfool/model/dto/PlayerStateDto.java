@@ -1,6 +1,6 @@
 package com.rekish.backendspanishfool.model.dto;
 
-import com.rekish.backendspanishfool.model.game.ChestItem;
+import com.rekish.backendspanishfool.model.entity.game.ChestItem;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

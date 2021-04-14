@@ -1,4 +1,4 @@
-package com.rekish.backendspanishfool.model.game;
+package com.rekish.backendspanishfool.model.entity.game;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

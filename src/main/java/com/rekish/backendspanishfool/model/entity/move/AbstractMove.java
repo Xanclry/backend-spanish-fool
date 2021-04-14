@@ -1,4 +1,4 @@
-package com.rekish.backendspanishfool.model.move;
+package com.rekish.backendspanishfool.model.entity.move;
 
 import com.rekish.backendspanishfool.model.entity.player.Player;
 import lombok.AllArgsConstructor;

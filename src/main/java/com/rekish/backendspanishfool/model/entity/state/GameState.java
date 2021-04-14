@@ -1,11 +1,10 @@
 package com.rekish.backendspanishfool.model.entity.state;
 
 import com.rekish.backendspanishfool.model.entity.session.GameSession;
-import com.rekish.backendspanishfool.model.game.Card;
+import com.rekish.backendspanishfool.model.entity.game.Card;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.Column;

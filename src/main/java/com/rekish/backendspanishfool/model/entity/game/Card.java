@@ -1,7 +1,7 @@
-package com.rekish.backendspanishfool.model.game;
+package com.rekish.backendspanishfool.model.entity.game;
 
-import com.rekish.backendspanishfool.model.game.enums.RankEnum;
-import com.rekish.backendspanishfool.model.game.enums.SuitEnum;
+import com.rekish.backendspanishfool.model.entity.game.enums.RankEnum;
+import com.rekish.backendspanishfool.model.entity.game.enums.SuitEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

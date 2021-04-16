@@ -1,8 +1,8 @@
 package com.rekish.backendspanishfool.utils;
 
-import com.rekish.backendspanishfool.model.card.RankEnum;
-import com.rekish.backendspanishfool.model.card.SuitEnum;
-import com.rekish.backendspanishfool.model.game.Card;
+import com.rekish.backendspanishfool.model.entity.game.enums.RankEnum;
+import com.rekish.backendspanishfool.model.entity.game.enums.SuitEnum;
+import com.rekish.backendspanishfool.model.entity.game.Card;
 
 import java.util.ArrayList;
 import java.util.Arrays;

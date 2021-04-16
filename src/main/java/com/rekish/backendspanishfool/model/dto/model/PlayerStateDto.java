@@ -1,4 +1,4 @@
-package com.rekish.backendspanishfool.model.dto;
+package com.rekish.backendspanishfool.model.dto.model;
 
 import com.rekish.backendspanishfool.model.entity.game.ChestItem;
 import lombok.AllArgsConstructor;

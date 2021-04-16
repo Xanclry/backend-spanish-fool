@@ -1,19 +1,24 @@
 package com.rekish.backendspanishfool.model.mapper;
 
-import com.rekish.backendspanishfool.model.dto.PlayerStateDto;
+import com.rekish.backendspanishfool.model.dto.model.PlayerStateDto;
 import com.rekish.backendspanishfool.model.entity.game.ChestItem;
 import com.rekish.backendspanishfool.model.entity.state.PlayerState;
 import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.mapstruct.InjectionStrategy;
 import org.mapstruct.Mapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = PlayerDtoMapper.class, injectionStrategy = InjectionStrategy.CONSTRUCTOR)
 @AllArgsConstructor
+@NoArgsConstructor
 public abstract class PlayerStateMapper {
 
-    private final PlayerDtoMapper playerDtoMapper;
+    @Autowired
+    private PlayerDtoMapper playerDtoMapper;
 
     public PlayerState playerStateDtoToPlayerState(PlayerStateDto dto) {
         PlayerState entity = new PlayerState();

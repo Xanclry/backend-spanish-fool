@@ -1,12 +1,14 @@
 package com.rekish.backendspanishfool.model.entity.state;
 
-import com.rekish.backendspanishfool.model.entity.player.Player;
-import com.rekish.backendspanishfool.model.entity.state.result.PlayerResult;
 import com.rekish.backendspanishfool.model.entity.game.Card;
 import com.rekish.backendspanishfool.model.entity.game.ChestItem;
+import com.rekish.backendspanishfool.model.entity.player.Player;
+import com.rekish.backendspanishfool.model.entity.state.result.PlayerResult;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.AttributeOverride;
 import javax.persistence.CascadeType;
@@ -24,6 +26,8 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = "playerResult")
+@ToString(exclude = "playerResult")
 
 @Entity
 public class PlayerState {

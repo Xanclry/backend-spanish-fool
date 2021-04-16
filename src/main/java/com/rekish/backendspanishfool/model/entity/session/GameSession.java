@@ -3,7 +3,9 @@ package com.rekish.backendspanishfool.model.entity.session;
 import com.rekish.backendspanishfool.model.entity.state.GameState;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -18,6 +20,8 @@ import javax.persistence.OneToOne;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@EqualsAndHashCode(exclude = "gameState")
+@ToString(exclude = "gameState")
 
 @Entity
 public class GameSession {

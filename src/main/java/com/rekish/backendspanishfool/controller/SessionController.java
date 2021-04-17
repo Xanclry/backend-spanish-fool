@@ -31,6 +31,7 @@ import java.util.stream.Collectors;
 public class SessionController {
 
     private final GameSessionService gameSessionService;
+    private final MetaWebsocketController metaWebsocketController;
 
     private final GameSessionMapper gameSessionMapper;
 
@@ -60,6 +61,7 @@ public class SessionController {
     public ResponseEntity<GameSessionDto> joinGameSession(@RequestBody PlayerDto playerDto, @PathVariable Long sessionId) {
         try {
             GameSession gameSession = gameSessionService.joinGameSession(playerDto, sessionId);
+            metaWebsocketController.playerJoined(sessionId, playerDto);
             GameSessionDto gameSessionDto = gameSessionMapper.gameSessionToGameSessionDto(gameSession);
             return ResponseEntity.ok(gameSessionDto);
         } catch (NoSuchElementException ignore) {
@@ -67,15 +69,11 @@ public class SessionController {
         }
     }
 
+
 //    @GetMapping("/{sessionId}")
 //    public ResponseEntity<GameSession> getGameSession(@PathVariable Integer sessionId) {
 //        Optional<GameSession> gameSession = gameSessionService.getPrivateGameSession(sessionId);
 //        return gameSession.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.badRequest().build());
-//    }
-
-//    @PostMapping("/subscribe")
-//    public ResponseEntity<PrivateGameSession> newSessionSubscriber(@RequestBody String uid) {
-//
 //    }
 
 }

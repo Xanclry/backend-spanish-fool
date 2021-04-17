@@ -2,6 +2,7 @@ package com.rekish.backendspanishfool.service.session;
 
 import com.rekish.backendspanishfool.model.dto.model.PlayerDto;
 import com.rekish.backendspanishfool.model.dto.session.NewSessionDto;
+import com.rekish.backendspanishfool.model.entity.game.Card;
 import com.rekish.backendspanishfool.model.entity.player.Player;
 import com.rekish.backendspanishfool.model.entity.session.GameSession;
 import com.rekish.backendspanishfool.model.entity.session.GameSessionStatusEnum;
@@ -14,6 +15,7 @@ import com.rekish.backendspanishfool.service.player.PlayerService;
 import com.rekish.backendspanishfool.service.state.GameStateService;
 import com.rekish.backendspanishfool.service.state.PlayerStateService;
 import com.rekish.backendspanishfool.utils.CardUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -26,6 +28,9 @@ import java.util.stream.StreamSupport;
 @Service
 @Transactional
 public class GameSessionServiceImpl extends ReadWriteServiceImpl<Long, GameSession> implements GameSessionService {
+
+    @Value("${game.max-card-in-hand}")
+    private Integer maxCardInHand;
 
     private final GameSessionRepository gameSessionRepository;
     private final GameStateService gameStateService;
@@ -57,8 +62,10 @@ public class GameSessionServiceImpl extends ReadWriteServiceImpl<Long, GameSessi
         }
 
         Player player = playerService.findOrCreate(playerDto);
+        List<Card> handCards = gameStateService.takeCardsFromDeck(maxCardInHand, gameState);
 
         PlayerState playerState = playerStateService.createPlayerState(player, false, gameState.getPlayerStates().size(), PlayerGameResultEnum.PLAYING);
+        playerState.setHandCard(handCards);
         playerState.setGameState(gameState);
 
         gameState.getPlayerStates().add(playerState);
@@ -73,10 +80,13 @@ public class GameSessionServiceImpl extends ReadWriteServiceImpl<Long, GameSessi
 
         PlayerState playerState = playerStateService.createPlayerState(owner, true, 0, PlayerGameResultEnum.PLAYING);
 
+
         GameState gameState = new GameState();
         gameState.setDeck(CardUtils.getFullCardDeck());
         gameState.getPlayerStates().add(playerState);
 
+        List<Card> handCards = gameStateService.takeCardsFromDeck(maxCardInHand, gameState);
+        playerState.setHandCard(handCards);
 
         GameSession gameSession = new GameSession();
         gameSession.setName(sessionDto.getName());

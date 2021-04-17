@@ -9,13 +9,14 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 
 @Embeddable
-public class Card {
+public class Card implements Serializable {
     @Enumerated(value = EnumType.ORDINAL)
     private RankEnum rank;
     @Enumerated(value = EnumType.ORDINAL)
